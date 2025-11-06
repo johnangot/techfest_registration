@@ -40,3 +40,12 @@ if dups:
         print(f"\nDuplicate name found: {d}")
 else:
     print("\nNo duplicate names.")
+
+summary = {}
+for p in participants:
+    t = p["track"]
+    summary[t] = summary.get(t, 0) + 1
+
+print("\nParticipants per track:")
+for t in sorted(summary):
+    print(f"{t}: {summary[t]}")
